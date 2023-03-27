@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.QRReader"
+             Title="QRReader"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
+             xmlns:zxingoptions="clr-namespace:ZXing.Net.Maui;assembly=ZXing.Net.MAUI">
+
+    <Grid RowDefinitions="*"
+        >
+        <zxing:CameraBarcodeReaderView 
+                x:Name="barcodeReader"
+                Grid.Row="0"
+                Grid.RowSpan="3"
+                IsDetecting="True"
+                IsTorchOn="False"
+                BarcodesDetected="CameraBarcodeReaderView_BarcodesDetected" />
+        <Label Grid.Row="0"
+               Text="Escanear codigo QR..."
+               TextColor="White"
+               FontSize="Subtitle"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+        <Label Grid.Row="2"
+               Text=""
+               x:Name="barcodeResult"
+               TextColor="Blue"
+               FontSize="Subtitle"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+    </Grid>
+</ContentPage>
